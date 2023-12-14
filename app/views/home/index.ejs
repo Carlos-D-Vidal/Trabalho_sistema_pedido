@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <% if(id_tipo_usuario == 1) {%>
+        <%- include('../../public/menu.html') %>
+    <% } %>
+
+    <% if(id_tipo_usuario == 2) { %>
+        <%- include('../../public/admin.html') %>
+    <% } %>    
+    <h1>Index</h1>
+</body>
+</html>

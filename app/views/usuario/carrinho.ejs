@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+</head>
+
+<body>
+    <h1>Carrinho</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th></th>
+        </tr>
+        <% for (let i=0; i < carrinho.length; i++) {%>
+            <tr>
+                <td>
+                    <%= carrinho[i]["produtos"].descricao %>
+                </td>
+                <td>$<%= carrinho[i]["produtos"].preco %>
+                </td>
+                <td>
+                    <%= carrinho[i].quantidade %>
+                </td>
+                <td>
+                    <a href="">Editar</a>
+                    <a href="">Exluir</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+    <p>Total: $<%= total %>
+    </p>
+    <form action="/produto/finalizar" method="post">
+        <select name="id_forma_pagamento">
+            <% for (let i=0; i < formaPagamento.length; i++) {%>
+                <option value="<%= formaPagamento[i].id %>">
+                    <%= formaPagamento[i].descricao %>
+                </option>
+            <% } %>
+        </select>
+        <input type="submit" value="finalizar">
+    </form>
+</body>
+
+</html>

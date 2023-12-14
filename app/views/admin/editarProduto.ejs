@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar produto</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <form action="/admin/editarProduto/<%=produto[0].id %>" method="post">
+        <label>Descrição</label>
+        <br>
+        <input type="text" value="<%= produto[0].descricao %>" name="descricao" id="descricao">
+        <br>
+        <label>Preço</label>
+        <br>
+        <input type="text" value="<%= produto[0].preco %>" name="preco" id="preco">
+        <br><br>
+        <input type="submit" value="Editar">
+    </form>
+</body>
+</html>

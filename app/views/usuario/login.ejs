@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<% if (erros){ %>
+    <ul>
+        <% for (let i=0; i < erros.length; i++) { %>
+            <li><%= erros[i].msg %></li>
+        <% } %>
+    </ul>
+<% } %>
+
+<body>
+        <form action="/usuario/validar" method="post">
+            <h1>Login</h1>
+            <label>Email</label>
+            <br>
+            <input type="email" value="<%= usuario.email %>" name="email" id="email">
+            <br>
+            <label>Senha</label>
+            <br>
+            <input type="password" value="<%= usuario.senha %>" name="senha" id="senha">
+            <br><br>
+            <input type="submit" value="Entrar">
+        </form>
+        <br>
+        <a href="/cadastro_usuario">Cadastre-se</a>
+</body>
+
+</html>

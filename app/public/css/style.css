@@ -1,0 +1,19 @@
+.menu
+{
+    text-align: center;
+    list-style: none;
+    background-color: lightgrey;
+}
+#menu
+{
+    display: inline;
+    font-weight: 600;
+    color:black;
+    cursor: pointer;
+    margin: 20px;
+}
+#button
+{
+    color:black;
+    margin: 5px;
+}

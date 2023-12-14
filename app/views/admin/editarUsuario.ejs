@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar usuario</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <form action="/admin/editarUsuario/<%= usuario[0].id %>" method="post">
+        <label>Nome</label>
+        <br>
+        <input type="text" value="<%= usuario[0].nome  %>" name="nome" id="nome">
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="email" value="<%= usuario[0].email  %>" name="email" id="email">
+        <br>
+        <label>Senha</label>
+        <br>
+        <input type="text" name="senha" id="senha">
+        <br>
+        <label>tipo usuario</label>
+        <br>
+        <select name="id_tipo_usuario">
+            <% for (let i = 0; i< tipos.length; i++){
+                if(usuario[0].id_tipo_usuario == tipos[i].id){
+            %>  
+                <option value="<%= tipos[i].id %>" selected><%= tipos[i].descricao %></option>    
+            <%      
+                }
+                else{
+            %>    
+                <option value="<%= tipos[i].id %>"><%= tipos[i].descricao %></option>    
+            <% }}  %>   
+        </select>
+        <br><br>
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
