@@ -12,4 +12,13 @@ module.exports = function (app)
     app.post('/produto/finalizar',function(request,response){
         app.app.controllers.produto.finalizar(app,request,response)
     })
+    app.get('/produto/editar/:idProduto',function(request,response){
+        app.app.controllers.produto.editar(app,request,response)
+    })
+    app.post('/produto/concluirEditar/:idProduto',function(request,response){
+        app.app.controllers.produto.concluirEditar(app,request,response)
+    })
+    app.get('/produto/remover/:idProduto',function(request,response){
+        app.app.controllers.produto.remover(app,request,response)
+    })
 }    

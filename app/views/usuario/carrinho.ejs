@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -27,13 +28,13 @@
                     <%= carrinho[i].quantidade %>
                 </td>
                 <td>
-                    <a href="">Editar</a>
-                    <a href="">Exluir</a>
+                    <a href="/produto/editar/<%=carrinho[i]["produtos"].id %>">Editar</a>
+                    <a href="/produto/remover/<%=carrinho[i]["produtos"].id %>">Remover</a>
                 </td>
             </tr>
             <% } %>
     </table>
-    <p>Total: $<%= total %>
+    <p>Total: $<%= total.toFixed(2) %>
     </p>
     <form action="/produto/finalizar" method="post">
         <select name="id_forma_pagamento">
@@ -46,5 +47,4 @@
         <input type="submit" value="finalizar">
     </form>
 </body>
-
 </html>

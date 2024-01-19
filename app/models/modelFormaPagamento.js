@@ -11,6 +11,8 @@ FormaPagamento.prototype.getForma = function(callback)
         })
     })
 }
+
+
 module.exports = function ()
 {
     return FormaPagamento

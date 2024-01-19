@@ -24,6 +24,14 @@ pedido.prototype.updateStatus = function(idUsuario,idForma){
         })
     })
 }
+pedido.prototype.updateForma = function(idForma,idPedido,callback)
+{
+    return new Promise((resolve,reject)=>{
+        this._conexao.query(`update pedido set id_forma_pagamento = ${id} where id = ${idPedido}`,function(erros,result){
+            resolve(result)
+        })
+    })
+}
 module.exports = function(){
     return pedido
 }

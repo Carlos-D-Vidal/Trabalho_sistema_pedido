@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar quantidade</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <form action="/produto/concluirEditar/<%=produto[0].id %>" method="post">
+        <label>Produto: <%= produto[0].descricao %></label>
+        <br>
+        <label>Quantidade</label>
+        <br>
+        <input type="text" value="<%= produtoCarrinho[0].quantidade %>" name="quantidade" id="quantidade">
+        <br><br>
+        <input type="submit" value="Editar">
+    </form>
+</body>
+</html>
