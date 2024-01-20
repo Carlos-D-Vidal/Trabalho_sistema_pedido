@@ -28,7 +28,7 @@ module.exports.cadastrar = function (app,request,response)
         erros.push({msg: 'Senha não esta igual'})
     }
     
-    if(erros)
+    if(erros.length>0)
     {
         response.render('usuario/cadastro',{erros : erros, usuario : dados})
         return
